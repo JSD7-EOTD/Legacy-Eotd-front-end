@@ -15,9 +15,9 @@ function Navbar() {
   };
 
   return (
-    <div>
+    <div className="z-50">
       <header className="bg-white shadow w-full h-[93px]">
-        <div className="2xl:px-64 xl:px-48 lg:px-32 md:px-16 sm:px-8 px-4 py-4 flex items-center justify-between w-full h-full">
+        <div className="lg:px-36 md:px-16 sm:px-8 px-4 py-4 flex items-center justify-between w-full h-full">
           <div className="flex items-center xl:space-x-8 lg:space-x-6 md:space-x-4 sm:space-x-2 space-x-1">
             <img
               src={logoGradient}
@@ -27,25 +27,25 @@ function Navbar() {
             <nav className="hidden md:flex space-x-1 lg:space-x-4">
               <a
                 href="#"
-                className="text-yellow-700 lg:text-xl px-2 py-1 rounded hover:bg-[#794222] hover:text-white transition-all duration-300 transform hover:translate-x-1"
+                className="text-yellow-700 lg:text-xl px-2 py-1 rounded hover:bg-gradient-to-r from-[#794222] to-[#BD8356] hover:text-white transition-all duration-300 transform hover:translate-x-1"
               >
                 Home
               </a>
               <a
                 href="#"
-                className="text-yellow-700 lg:text-xl px-2 py-1 rounded hover:bg-[#794222] hover:text-white transition-all duration-300 transform hover:translate-x-1"
+                className="text-yellow-700 lg:text-xl px-2 py-1 rounded hover:bg-gradient-to-r from-[#794222] to-[#BD8356] hover:text-white transition-all duration-300 transform hover:translate-x-1"
               >
                 Product
               </a>
               <a
                 href="#"
-                className="text-yellow-700 lg:text-xl px-2 py-1 rounded hover:bg-[#794222] hover:text-white transition-all duration-300 transform hover:translate-x-1"
+                className="text-yellow-700 lg:text-xl px-2 py-1 rounded hover:bg-gradient-to-r from-[#794222] to-[#BD8356] hover:text-white transition-all duration-300 transform hover:translate-x-1"
               >
                 About Us
               </a>
               <a
                 href="#"
-                className="text-yellow-700 lg:text-xl px-2 py-1 rounded hover:bg-[#794222] hover:text-white transition-all duration-300 transform hover:translate-x-1"
+                className="text-yellow-700 lg:text-xl px-2 py-1 rounded hover:bg-gradient-to-r from-[#794222] to-[#BD8356] hover:text-white transition-all duration-300 transform hover:translate-x-1"
               >
                 Contact
               </a>
@@ -56,12 +56,12 @@ function Navbar() {
               <input
                 type="text"
                 placeholder="Search..."
-                className={`border px-3 py-1 rounded-full focus:outline-none focus:border-[#794222] transition-all duration-300 ${
-                  isSearchBarOpen ? "2xl:w-[568px] md:w-48" : "w-0"
+                className={`border border-[#794222]  px-6 py-1 rounded-full focus:outline-none focus:border-[#794222] transition-all duration-300 ${
+                  isSearchBarOpen ? "2xl:w-[768px] md:w-48" : "w-0"
                 }`}
               />
               <button
-                className={`absolute inset-y-0 right-0 px-2 py-1 bg-white text-yellow-700 rounded-full hover:bg-[#794222] hover:text-white transition-all duration-300 ${
+                className={`absolute inset-y-0 right-0 px-3 py-1 bg-[#EDBF9A]/50 rounded-full hover:bg-gradient-to-r from-[#794222] to-[#BD8356] hover:text-white transition-all duration-300 ${
                   isSearchBarOpen && "bg-[#794222] text-white"
                 }`}
                 onClick={toggleSearchBar}
