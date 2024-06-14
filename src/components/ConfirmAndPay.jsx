@@ -1,5 +1,5 @@
 import React from "react";
-import 'boxicons'
+import "boxicons";
 import Navbar from "./Navbar";
 
 const ConfirmAndPay = () => {
@@ -34,41 +34,49 @@ const ConfirmAndPay = () => {
             <div className="flex justify-between text-xl text-black font-semibold">
               <h3>Credit Card</h3>
               <div className="flex justify-between">
-              <box-icon name='visa' type='logo'color='#BD8356' ></box-icon>
-              <box-icon name='mastercard' type='logo' color='#BD8356'></box-icon>
+                <box-icon name="visa" type="logo" color="#BD8356"></box-icon>
+                <box-icon
+                  name="mastercard"
+                  type="logo"
+                  color="#BD8356"
+                ></box-icon>
               </div>
             </div>
+
             <div>
-              <p>CARD NUMBER</p>
+              <label>CARD NUMBER</label>
               <input
                 type="text"
-                id="card-number"
+                name="card number"
                 required
                 className="border-2 p-2 rounded-lg w-full"
               />
             </div>
             <div>
-              <p>CARD HOLDER</p>
+              <label>CARD HOLDER</label>
               <input
                 type="text"
+                name="card holder"
                 required
                 className="border-2 p-2 rounded-lg w-full"
               />
             </div>
             <div className="flex justify-between">
               <div className="md:w-2/5">
-                <p>EXPIRATION DATE</p>
+                <label>EXPIRATION DATE</label>
                 <input
                   type="number"
                   placeholder="MM/YY"
+                  name="expiration date"
                   required
                   className="border-2 p-2 rounded-lg w-full "
                 />
               </div>
               <div className="md:w-2/5">
-                <p>CVC</p>
+                <label>CVC</label>
                 <input
                   type="number"
+                  name="cvc"
                   required
                   className="border-2 p-2 rounded-lg w-full"
                 />

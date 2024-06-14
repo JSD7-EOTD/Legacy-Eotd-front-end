@@ -56,12 +56,12 @@ function Navbar() {
               <input
                 type="text"
                 placeholder="Search..."
-                className={`border border-[#794222]  px-4 py-1 rounded-full focus:outline-none focus:border-[#794222] transition-all duration-300 ${
+                className={`border border-[#794222] bg-white px-6 py-1 rounded-full focus:outline-none focus:border-[#794222] transition-all duration-300 ${
                   isSearchBarOpen ? "2xl:w-[768px] md:w-48" : "w-0"
                 }`}
               />
               <button
-                className={`absolute inset-y-0 right-0 px-3 py-1 bg-white text-yellow-700 rounded-full hover:bg-gradient-to-r from-[#794222] to-[#BD8356] hover:text-white transition-all duration-300 ${
+                className={`absolute inset-y-0 right-0 px-3 py-1 bg-[#EDBF9A]/50 rounded-full hover:bg-gradient-to-r from-[#794222] to-[#BD8356] hover:text-white transition-all duration-300 ${
                   isSearchBarOpen && "bg-[#794222] text-white"
                 }`}
                 onClick={toggleSearchBar}
@@ -86,7 +86,7 @@ function Navbar() {
           </div>
         </div>
         {isOpen && (
-          <div className="md:hidden bg-white">
+          <div className="md:hidden">
             <nav className="px-8 py-4 space-y-2 bg-white shadow-md">
               <div className="relative flex items-center">
                 <input

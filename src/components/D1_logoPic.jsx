@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-const Left = () => {
+const D1_logoPic = () => {
   return (
   <div className="flex flex-col items-center md:justify-center text-center md:w-1/2 bg-gradient-to-r from-[#794222] to-[#BD8356] text-white p-6">
     <img src="../../public/images/icon/logo-white.png" alt="Logo" className="w-20 md:w-40" />
@@ -12,4 +12,4 @@ const Left = () => {
   )
 }
 
-export default Left
+export default D1_logoPic;
