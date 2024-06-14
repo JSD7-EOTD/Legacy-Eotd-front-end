@@ -8,6 +8,12 @@ import CardMapping from "./components/CardMapping.jsx";
 import Filter from "./components/Filter.jsx";
 import Footer from "./components/Footer.jsx";
 import ChangePage from "./components/ChangePage.jsx";
+
+import Display from "./components/display.jsx";
+import Description from "./components/description.jsx";
+import ReviewSection from "./components/review.jsx";
+import Suggest from "./components/suggest.jsx";
+
 import FilterMobile from "./components/FilterMobile.jsx";
 
 // Part E
@@ -28,6 +34,7 @@ import A5video from "./components/A5video.jsx";
 import D2_login from "./components/D2_login.jsx"
 import D3_createAccount from "./components/D3_createAccount.jsx"
 import ConfirmAndPay from "./components/ConfirmAndPay"
+
 
 function App() {
   const [productList, setProductList] = useState([]);
@@ -172,6 +179,24 @@ function App() {
             <ChangePage />
           </div>
           <Footer />
+        </div>
+      ),
+    },
+    //product info page ของขั่ย
+    {
+      path: "/product_info",
+      element: (
+        <div>
+          <div>
+            <Navbar />
+          </div>
+          <Display />
+          <Description />
+          <ReviewSection />
+          <Suggest />
+          <div>
+            <Footer />
+          </div>
         </div>
       ),
     },
