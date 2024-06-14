@@ -1,12 +1,12 @@
 import React from "react";
 
-function CardMapping({ productList }) {
+function Card({ productList }) {
   return (
-    <div className="pt-8 flex flex-wrap justify-center lg:justify-between lg:items-between ">
+    <div>
       {productList.map((product) => (
         <div
           key={product.id}
-          className="card mb-8  mx-4 lg:mx-0 border-2 w-full sm:w-[300px] md:w-[350px] lg:w-[368px] xl:w-[368px] 2xl:w-[368px] h-[480px] bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
+          className="card border-2 w-full sm:w-[300px] md:w-[350px] lg:w-[368px] xl:w-[368px] 2xl:w-[368px] h-[480px] bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
         >
           <figure className="h-48 w-full overflow-hidden">
             <img
@@ -35,4 +35,4 @@ function CardMapping({ productList }) {
   );
 }
 
-export default CardMapping;
+export default Card;

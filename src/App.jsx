@@ -8,6 +8,7 @@ import CardMapping from "./components/CardMapping.jsx";
 import Filter from "./components/Filter.jsx";
 import Footer from "./components/Footer.jsx";
 import ChangePage from "./components/ChangePage.jsx";
+import FilterMobile from "./components/FilterMobile.jsx";
 
 // Part E
 import E1_dropdown from "../src/components/E1_dropdown.jsx";
@@ -140,11 +141,14 @@ function App() {
         <div>
           <Navbar />
           <ProductHero />
-          <div className="flex w-full justify-center">
-            <div className="w-[432px] flex justify-start ">
+          <div className="flex flex-col lg:flex-row w-full lg:justify-center">
+            <div className="w-full lg:w-[432px] lg:flex lg:justify-start hidden ">
               <Filter />
             </div>
-            <div className="w-[1168px]">
+            <div className="w-full flex justify-center lg:hidden">
+              <FilterMobile />
+            </div>
+            <div className="w-full lg:w-[1168px]">
               <CardMapping productList={productList} />
             </div>
           </div>
