@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const Test = () => {
   return (
     <section className="relative flex justify-center items-center z-10">
