@@ -6,7 +6,7 @@ import E7_previousOrders from "./E7_previousOrders";
 const E8_trackingOrders = () => {
   return (
     <div className="container mx-auto">
-      <div className="px-4 py-4 flex flex-col gap-5">
+      <div className="px-4 py-4 flex flex-col gap-20">
         {/* Upcoming orders */}
         <h1 className="text-xl sm:text-3xl md:text-4xl font-bold text-[#BD8356]">
           Upcoming orders

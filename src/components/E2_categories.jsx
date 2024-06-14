@@ -4,8 +4,8 @@ import React from "react";
 const E2_categories = () => {
   return (
     <div>
-      <div className="md:flex-1 mr-32">
-        <div className="p-10 shadow-lg border rounded-2xl text-yellow-700 font-bold max-sm:hidden">
+      <div className="w-[300px] ">
+        <div className="p-10 shadow-lg border rounded-2xl text-yellow-700 font-bold ">
           <nav className="flex gap-6 items-center mb-5">
             <box-icon name="user"></box-icon>
             <p>Personal info</p>

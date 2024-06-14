@@ -1,22 +1,20 @@
 import React from "react";
 import "boxicons";
 
-const E5_myPayments = () => {
+const E5_myPayments = ({ errors, handleChange, handleSubmit }) => {
   return (
     <div className="container mx-auto">
-      <div className="px-4 py-4 flex flex-col gap-5">
+      <form className="px-4 py-4 flex flex-col gap-5" onSubmit={handleSubmit}>
         {/* Payment meothods*/}
         <div className="flex flex-col justify-between pt-3 space-y-4 ">
           {/* Main Heading */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#BD8356]">
             Payment methods
           </h1>
-
           {/* Credit Card Section */}
           <h3 className="text-info-content text-lg sm:text-xl md:text-2xl font-bold pt-4">
             Credit card
           </h3>
-
           {/* Card Details */}
           <h5 className="text-info-content text-sm sm:text-base pt-3">
             Visa *****9999
@@ -26,11 +24,13 @@ const E5_myPayments = () => {
           </h5>
           {/* Add New Credit Method Button */}
           <div className="">
-            <button className="bg-[#BD8356] text-white px-4 py-2 rounded-3xl hover:bg-[#794222] transition-colors duration-200">
+            <button
+              type="submit"
+              className="bg-[#BD8356] text-white px-4 py-2 rounded-3xl hover:bg-[#794222] transition-colors duration-200"
+            >
               Add new credit method
             </button>
           </div>
-
           {/* Add New Credit Card Section */}
           <div className="flex justify-between">
             <h3 className="text-info-content text-sm sm:text-base md:text-lg font-bold">
@@ -51,9 +51,14 @@ const E5_myPayments = () => {
 
             <input
               type="text"
+              name="cardNumber"
               placeholder="Enter your card number"
               className="input input-bordered w-full  bg-white border-2 px-5 py-2 rounded-xl"
+              onChange={handleChange}
             />
+            {errors.cardNumber && (
+              <span className="text-red-500">{errors.cardNumber}</span>
+            )}
           </label>
 
           {/* Card Name Input */}
@@ -62,9 +67,14 @@ const E5_myPayments = () => {
 
             <input
               type="text"
+              name="cardName"
               placeholder="Enter your card name"
               className="input input-bordered w-full  bg-white border-2 px-5 py-2 rounded-xl"
+              onChange={handleChange}
             />
+            {errors.cardName && (
+              <span className="text-red-500">{errors.cardName}</span>
+            )}
           </label>
 
           {/* Expiration Date and CVC Inputs */}
@@ -73,19 +83,27 @@ const E5_myPayments = () => {
               <span className="font-bold text-gray-600]">EXPIRATION DATE</span>
 
               <input
-                type="text"
+                type="number"
+                name="expirationDate"
                 placeholder="MM / YY"
                 className="input input-bordered w-full  bg-white border-2 px-5 py-2 rounded-xl"
+                onChange={handleChange}
               />
+              {errors.expirationDate && (
+                <span className="text-red-500">{errors.cardName}</span>
+              )}
             </label>
             <label className="w-full  pb-3">
               <span className="font-bold text-gray-600]">CVC</span>
 
               <input
-                type="text"
+                type="number"
+                name="cvc"
                 placeholder="Enter CVC"
                 className="input input-bordered w-full  bg-white border-2 px-5 py-2 rounded-xl"
+                onChange={handleChange}
               />
+              {errors.cvc && <span className="text-red-500">{errors.cvc}</span>}
             </label>
           </div>
 
@@ -136,7 +154,7 @@ const E5_myPayments = () => {
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
