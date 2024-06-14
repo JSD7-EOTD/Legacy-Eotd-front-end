@@ -24,7 +24,7 @@ function Navbar() {
               alt="Logo"
               className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
             />
-            <nav className="hidden md:flex space-x-1 lg:space-x-4">
+            <nav className=" hidden md:flex space-x-1 lg:space-x-4">
               <a
                 href="#"
                 className="text-yellow-700 lg:text-xl px-2 py-1 rounded hover:bg-gradient-to-r from-[#794222] to-[#BD8356] hover:text-white transition-all duration-300 transform hover:translate-x-1"
