@@ -1,56 +1,35 @@
 import React from "react";
 
-// Factory function to create category items
-const createCategoryItem = (src, alt, label) => {
-  return (
-    <div className="mb-16">
-      <img
-        src={src}
-        alt={alt}
-        className="w-[98px] h-[142px] rounded-full overflow-hidden border-4 border-orange-900 border-solid divide-x shadow-xl object-scale-down"
-      />
-      <p className="mt-2 text-brown-500 text-orange-900 text-center font-bold">
-        {label}
-      </p>
-    </div>
-  );
-};
 
 const Test = () => {
   return (
-    <section className="h-[580px] mx-10 justify-items-center  ">
-      {" "}
-      <div className="flex flex-col md:flex-row justify-center gap-5 md:gap-0 sm:flex-row sm:gap-0">
-        <h2 className="text-2xl font-semibold text-orange-900 mt-8 w-[354px] h-[32px] mb-16 text-center sm:text-[32px]  ">
-          Category
-        </h2>
-      </div>
-      <div className="flex flex-col md:flex-row justify-center gap-5 md:gap-0 sm:flex-row sm:gap-0">
-        <h1 className="text-2xl font-semibold text-orange-900 mt-2 w-[354px] h-[90px] mb-16 text-center sm:text-[32px]">
-          สินค้าคัดสรรจากคนรักสัตว์เพื่อสัตว์เลี้ยงของคุณ
+    <section className="relative flex justify-center items-center z-10">
+      <div className="absolute lg:bottom-24 bottom-24 xl:mb-28 xl:mr-[604px]">
+        <h1 className="font-bold text-[#EDBF9A] text-[32px] px-4  lg:w-2/3    sm:text-[36px] md:text-[46px] lg:text-[64px]">
+          จงเป็นทาสที่ดี
+          <br />
+          เป็นทาสที่เชื่อฟัง
         </h1>
+        <p className="text-[16px] text-white px-4  w-full">
+          เลอใดเล่าจะเท่า เลอเลม Lorem ipsum dolor <br /> sit amet consectetur
+          adipisicing elit. Nobis <br />
+          assumenda sapiente doloremque, aliquid <br /> porro expedita minus
+          libero ex incidunt.
+        </p>
+        <div>
+          <button className="text-xl md:text-2xl px-4 py-2 rounded text-yellow-700 hover:bg-gradient-to-r from-[#794222] to-[#BD8356] hover:text-white transition-all duration-300 transform hover:translate-x-1">
+            MORE
+          </button>
+        </div>
       </div>
-      <div className="flex flex-wrap justify-center space-x-8 mt-6">
-        {createCategoryItem(
-          "../../public/images/CategoryA1/Toys.png",
-          "Toys",
-          "Toys"
-        )}
-        {createCategoryItem(
-          "../../public/images/CategoryA1/Towers.png",
-          "Towers",
-          "Towers"
-        )}
-        {createCategoryItem(
-          "../../public/images/CategoryA1/toilets.png",
-          "Toilets",
-          "Toilets"
-        )}
-        {createCategoryItem(
-          "../../public/images/CategoryA1/feeder.png",
-          "Feeder",
-          "Feeder"
-        )}
+      <div className="w-full md:w-[1600px] h-[700px] flex justify-center ">
+        <div className="w-full h-full">
+          <img
+            className="h-full w-full object-cover"
+            src="../../public/images/A1/Hero_1 Cat.png"
+            alt=""
+          />
+        </div>
       </div>
     </section>
   );

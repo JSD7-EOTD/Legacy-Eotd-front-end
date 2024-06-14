@@ -1,13 +1,16 @@
 const A2hero2 = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-center gap-5 md:gap-0">
-      <div className="shadow-lg w-full md:w-1/2 p-5 md:pr-20 md:pl-0 object-center">
-        <img src="../../public/images/A1/Hero2_Dog.png" alt="Hero2 Dog" />
+    <div className="flex flex-col md:flex-row justify-center gap-5 sm:px-10 md:px-10 lg:px-10">
+      <div className="shadow-lg w-full md:w-1/2 p-5 md:pr-20 md:pl-0 px-10">
+        <img
+          src="../../public/images/A1/Hero2_Dog.png"
+          alt="Hero2 Dog"
+          className="object-center w-full"
+        />
       </div>
 
-      <div className="shadow-lg w-full md:text-3xl md:w-1/2 p-5 md:pr-0  space-y-10 md:space-y-4">
-        <h1 className=" md:text-4xl
-         text-orange-800 text-center font-bold lg:w-1020 text-6xl">
+      <div className="shadow-lg w-full md:w-1/2 p-5 space-y-6 md:space-y-4">
+        <h1 className="text-4xl md:text-6xl text-orange-800 text-center font-bold">
           เพื่อนซี่สีขาบ้านหมาคุณภาพ
         </h1>
         <p className="text-lg md:text-xl text-orange-800 text-center">
