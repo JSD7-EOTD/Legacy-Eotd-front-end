@@ -24,7 +24,7 @@ function Navbar() {
               alt="Logo"
               className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
             />
-            <nav className="hidden md:flex space-x-1 lg:space-x-4">
+            <nav className=" hidden md:flex space-x-1 lg:space-x-4">
               <a
                 href="#"
                 className="text-yellow-700 lg:text-xl px-2 py-1 rounded hover:bg-gradient-to-r from-[#794222] to-[#BD8356] hover:text-white transition-all duration-300 transform hover:translate-x-1"
@@ -56,7 +56,7 @@ function Navbar() {
               <input
                 type="text"
                 placeholder="Search..."
-                className={`border border-[#794222]  px-6 py-1 rounded-full focus:outline-none focus:border-[#794222] transition-all duration-300 ${
+                className={`border border-[#794222] bg-white px-6 py-1 rounded-full focus:outline-none focus:border-[#794222] transition-all duration-300 ${
                   isSearchBarOpen ? "2xl:w-[768px] md:w-48" : "w-0"
                 }`}
               />
