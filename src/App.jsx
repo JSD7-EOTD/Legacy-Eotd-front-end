@@ -16,7 +16,7 @@ import Suggest from "./components/suggest.jsx";
 
 import FilterMobile from "./components/FilterMobile.jsx";
 
-// Part E
+// Part E ของ mc ครัช
 import E1_dropdown from "../src/components/E1_dropdown.jsx";
 import E2_categories from "../src/components/E2_categories.jsx";
 import E3_personalInfo from "../src/components/E3_personalInfo.jsx";
