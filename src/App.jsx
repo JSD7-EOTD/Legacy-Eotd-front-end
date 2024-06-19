@@ -24,17 +24,16 @@ import E4_loginAndSecurity from "../src/components/E4_loginAndSecurity.jsx";
 import E5_myPayments from "../src/components/E5_myPayments.jsx";
 import E8_trackingOrders from "../src/components/E8_trackingOrders.jsx";
 
-
 //ของแฟร์งงับ
 import Test from "./components/Test.jsx";
 import A2hero2 from "./components/A2hero2.jsx";
 import A1hero from "./components/A1hero .jsx";
 import A4comment from "./components/A4comment.jsx";
 import A5video from "./components/A5video.jsx";
-import D2_login from "./components/D2_login.jsx"
-import D3_createAccount from "./components/D3_createAccount.jsx"
-import ConfirmAndPay from "./components/ConfirmAndPay"
-
+import D2_login from "./components/D2_login.jsx";
+import D3_createAccount from "./components/D3_createAccount.jsx";
+import ConfirmAndPay from "./components/ConfirmAndPay";
+import Cart from "./components/Cart.jsx";
 
 function App() {
   const [productList, setProductList] = useState([]);
@@ -60,14 +59,13 @@ function App() {
     const fetchAllProduct = async () => {
       try {
         const response = await axios.get(
-          "https://pokeapi.co/api/v2/pokemon?limit=9"
+          "https://store-crud.onrender.com/api/product"
         );
         // const data = await response.data;
-
+        // console.log(response);
         const productData = [];
-        for (const product of response.data.results) {
-          const res = await axios.get(product.url);
-          productData.push(res.data);
+        for (const product of response.data) {
+          productData.push(product);
         }
         // console.log(productData);
         setProductList(productData);
@@ -184,14 +182,13 @@ function App() {
     },
     //product info page ของขั่ย
     {
-      path: "/product_info",
+      path: "/product/:id",
       element: (
         <div>
-          <div>
+          <div className="mb-24">
             <Navbar />
           </div>
           <Display />
-          <Description />
           <ReviewSection />
           <Suggest />
           <div>
@@ -200,6 +197,23 @@ function App() {
         </div>
       ),
     },
+    // {
+    //   path: "/product_info",
+    //   element: (
+    //     <div>
+    //       <div className="mb-24">
+    //         <Navbar />
+    //       </div>
+    //       <Display />
+    //       <Description />
+    //       <ReviewSection />
+    //       <Suggest />
+    //       <div>
+    //         <Footer />
+    //       </div>
+    //     </div>
+    //   ),
+    // },
     {
       path: "/logIn",
       element: (
@@ -212,10 +226,14 @@ function App() {
     },
     // หน้าlogin ของบิวงับ
     {
-      path: "",
+      path: "/Cart",
       element: (
         <div>
           <Navbar />
+          <Cart />
+          <div className="pt-8">
+            <Footer />
+          </div>
         </div>
       ),
     },
@@ -225,7 +243,7 @@ function App() {
       element: (
         <div>
           <Navbar />
-          <div className="container mx-auto flex gap-10 py-10 px-5 sm:px-10 md:px-20 lg:px-40 relative">
+          <div className="mt-24 container mx-auto flex gap-10 py-10 px-5 sm:px-10 md:px-20 lg:px-40 relative">
             <div className="hidden lg:block max-w-xs sticky">
               <E2_categories />
             </div>

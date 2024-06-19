@@ -6,7 +6,7 @@ function Card({ productList }) {
       {productList.map((product) => (
         <div
           key={product.id}
-          className="card border-2 w-full sm:w-[300px] md:w-[350px] lg:w-[368px] xl:w-[368px] 2xl:w-[368px] h-[480px] bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
+          className="card mb-8  mx-4 lg:mx-0 border-2 w-full sm:w-[300px] md:w-[350px] lg:w-[368px] xl:w-[368px] 2xl:w-[368px] h-[480px] bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
         >
           <figure className="h-48 w-full overflow-hidden">
             <img
