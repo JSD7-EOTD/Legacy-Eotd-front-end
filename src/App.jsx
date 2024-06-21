@@ -16,7 +16,7 @@ import Suggest from "./components/suggest.jsx";
 
 import FilterMobile from "./components/FilterMobile.jsx";
 
-// Part E
+// Part E ของ mc ครัช
 import E1_dropdown from "../src/components/E1_dropdown.jsx";
 import E2_categories from "../src/components/E2_categories.jsx";
 import E3_personalInfo from "../src/components/E3_personalInfo.jsx";
@@ -33,11 +33,8 @@ import A5video from "./components/A5video.jsx";
 import D2_login from "./components/D2_login.jsx";
 import D3_createAccount from "./components/D3_createAccount.jsx";
 import ConfirmAndPay from "./components/ConfirmAndPay";
-<<<<<<< HEAD
 import A3category from "./components/A3category.jsx";
-=======
 import Cart from "./components/Cart.jsx";
->>>>>>> 28e003d31755c0bd69a38d18597edb402d786a16
 
 function App() {
   const [productList, setProductList] = useState([]);
@@ -109,7 +106,7 @@ function App() {
     }
     if (!formData.phone.trim()) {
       validationErrors.phone = "Your phone number is required";
-    } else if (formData.phone.length === 10) {
+    } else if (formData.phone.length !== 10) {
       validationErrors.phone = "Your phone number should be at 10";
     }
     if (!formData.email.trim()) {

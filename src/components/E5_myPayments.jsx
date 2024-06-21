@@ -83,11 +83,13 @@ const E5_myPayments = ({ errors, handleChange, handleSubmit }) => {
               <span className="font-bold text-gray-600]">EXPIRATION DATE</span>
 
               <input
-                type="number"
+                type="text"
+                maxLength="5"
+                pattern="\d{2}/\d{2}"
+                placeholder="MM/YY"
                 name="expirationDate"
-                placeholder="MM / YY"
-                className="input input-bordered w-full  bg-white border-2 px-5 py-2 rounded-xl"
                 onChange={handleChange}
+                className="border-2 p-2 rounded-lg w-full  bg-white "
               />
               {errors.expirationDate && (
                 <span className="text-red-500">{errors.cardName}</span>
@@ -95,13 +97,11 @@ const E5_myPayments = ({ errors, handleChange, handleSubmit }) => {
             </label>
             <label className="w-full  pb-3">
               <span className="font-bold text-gray-600]">CVC</span>
-
               <input
                 type="number"
                 name="cvc"
-                placeholder="Enter CVC"
-                className="input input-bordered w-full  bg-white border-2 px-5 py-2 rounded-xl"
                 onChange={handleChange}
+                className="border-2 p-2 rounded-lg w-full  bg-white "
               />
               {errors.cvc && <span className="text-red-500">{errors.cvc}</span>}
             </label>
