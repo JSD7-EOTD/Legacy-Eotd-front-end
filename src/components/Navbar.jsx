@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "boxicons";
 import logoGradient from "../../public/images/icon/logoGradient.png";
-
+import { Link, Outlet } from "react-router-dom";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchBarOpen, setSearchBarOpen] = useState(false);
+  const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -14,9 +15,13 @@ function Navbar() {
     setSearchBarOpen(!isSearchBarOpen);
   };
 
+  const toggleUserDropdown = () => {
+    setIsUserDropdownOpen(!isUserDropdownOpen);
+  };
+
   return (
-    <div className="z-50">
-      <header className="bg-white shadow w-full h-[93px]">
+    <div className="fixed top-0 w-full z-50 ">
+      <header className="bg-white shadow w-full h-[96px]">
         <div className="lg:px-36 md:px-16 sm:px-8 px-4 py-4 flex items-center justify-between w-full h-full">
           <div className="flex items-center xl:space-x-8 lg:space-x-6 md:space-x-4 sm:space-x-2 space-x-1">
             <img
@@ -25,18 +30,20 @@ function Navbar() {
               className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
             />
             <nav className=" hidden md:flex space-x-1 lg:space-x-4">
-              <a
+              <Link
+                to="/"
                 href="#"
                 className="text-yellow-700 lg:text-xl px-2 py-1 rounded hover:bg-gradient-to-r from-[#794222] to-[#BD8356] hover:text-white transition-all duration-300 transform hover:translate-x-1"
               >
                 Home
-              </a>
-              <a
+              </Link>
+              <Link
+                to="/Product"
                 href="#"
                 className="text-yellow-700 lg:text-xl px-2 py-1 rounded hover:bg-gradient-to-r from-[#794222] to-[#BD8356] hover:text-white transition-all duration-300 transform hover:translate-x-1"
               >
                 Product
-              </a>
+              </Link>
               <a
                 href="#"
                 className="text-yellow-700 lg:text-xl px-2 py-1 rounded hover:bg-gradient-to-r from-[#794222] to-[#BD8356] hover:text-white transition-all duration-300 transform hover:translate-x-1"
@@ -70,13 +77,43 @@ function Navbar() {
               </button>
             </div>
           </div>
-          <div className="flex items-center xl:space-x-4 lg:space-x-3 md:space-x-2 sm:space-x-1 space-x-0.5">
-            <button className="btn btn-ghost btn-circle text-info-content">
+          <div className="flex items-center xl:space-x-4 lg:space-x-3 md:space-x-2 sm:space-x-1 space-x-0.5 relative">
+            <Link
+              to="/Cart"
+              className="btn btn-ghost btn-circle text-info-content"
+            >
               <box-icon name="cart"></box-icon>
-            </button>
-            <button className="btn btn-ghost btn-circle text-info-content">
-              <box-icon name="user"></box-icon>
-            </button>
+            </Link>
+            <div className="relative">
+              <button
+                className="btn btn-ghost btn-circle text-info-content"
+                onClick={toggleUserDropdown}
+              >
+                <box-icon name="user"></box-icon>
+              </button>
+              {isUserDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2">
+                  <Link
+                    to="/User"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Profile
+                  </Link>
+                  <Link
+                    to="/Settings"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Settings
+                  </Link>
+                  <Link
+                    to="/Logout"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Logout
+                  </Link>
+                </div>
+              )}
+            </div>
             <button
               className="md:hidden btn btn-ghost btn-circle"
               onClick={toggleMenu}

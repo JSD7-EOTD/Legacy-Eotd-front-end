@@ -24,7 +24,6 @@ import E4_loginAndSecurity from "../src/components/E4_loginAndSecurity.jsx";
 import E5_myPayments from "../src/components/E5_myPayments.jsx";
 import E8_trackingOrders from "../src/components/E8_trackingOrders.jsx";
 
-
 //ของแฟร์งงับ
 
 import A2hero2 from "./components/A2hero2.jsx";
@@ -34,7 +33,11 @@ import A5video from "./components/A5video.jsx";
 import D2_login from "./components/D2_login.jsx";
 import D3_createAccount from "./components/D3_createAccount.jsx";
 import ConfirmAndPay from "./components/ConfirmAndPay";
+<<<<<<< HEAD
 import A3category from "./components/A3category.jsx";
+=======
+import Cart from "./components/Cart.jsx";
+>>>>>>> 28e003d31755c0bd69a38d18597edb402d786a16
 
 function App() {
   const [productList, setProductList] = useState([]);
@@ -45,6 +48,7 @@ function App() {
   const [formData, setFormData] = useState({
     displayName: "", //
     fullName: "", //
+    password: "", //
     phone: "", //
     email: "", //
     address: "", //
@@ -60,14 +64,13 @@ function App() {
     const fetchAllProduct = async () => {
       try {
         const response = await axios.get(
-          "https://pokeapi.co/api/v2/pokemon?limit=9"
+          "https://store-crud.onrender.com/api/product"
         );
         // const data = await response.data;
-
+        // console.log(response);
         const productData = [];
-        for (const product of response.data.results) {
-          const res = await axios.get(product.url);
-          productData.push(res.data);
+        for (const product of response.data) {
+          productData.push(product);
         }
         // console.log(productData);
         setProductList(productData);
@@ -112,14 +115,14 @@ function App() {
     if (!formData.email.trim()) {
       validationErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      validationErrors.email = "Email is not valid";
+      validationErrors.email = "Email is invalid";
     }
     if (!formData.address.trim()) {
       validationErrors.address = "Address is required";
     }
     if (!formData.cardNumber.trim()) {
       validationErrors.cardNumber = "Card number is required";
-    } else if (formData.cardNumber.length === 16) {
+    } else if (formData.cardNumber.length !== 16) {
       validationErrors.cardNumber = "Card number should be at 16";
     }
     if (!formData.cardName.trim()) {
@@ -127,13 +130,20 @@ function App() {
     }
     if (!formData.expirationDate.trim()) {
       validationErrors.expirationDate = "Expiration date is required";
-    } else if (formData.expirationDate.length !== 4) {
-      validationErrors.expirationDate = "Expiration date should be at 4";
+    } else if (formData.expirationDate.length !== 5) {
+      validationErrors.expirationDate = "Expiration date should be 4 characters";
     }
-    if (!formData.cvc.trim()) {
+  if (!formData.cvc.trim()) {
       validationErrors.cvc = "CVC is required";
     } else if (formData.cvc.length !== 3) {
       validationErrors.cvc = "CVC should be at 3";
+    }
+    if (!formData.password.trim()) {
+      validationErrors.password = "Password is required";
+    } else if (formData.password.length < 8 ) {
+      validationErrors.password = "Password should be at least 8 characters";
+    } else if (formData.password.length > 15 ) {
+      validationErrors.password = "Password should not over 15 characters";
     }
 
     setValidateError(validationErrors);
@@ -185,14 +195,13 @@ function App() {
     },
     //product info page ของขั่ย
     {
-      path: "/product_info",
+      path: "/product/:id",
       element: (
         <div>
-          <div>
+          <div className="mb-24">
             <Navbar />
           </div>
           <Display />
-          <Description />
           <ReviewSection />
           <Suggest />
           <div>
@@ -201,22 +210,20 @@ function App() {
         </div>
       ),
     },
+  // หน้าlogin ของบิวงับ
     {
       path: "/logIn",
       element: (
         <div>
-          <D2_login />
-          <D3_createAccount />
-          <ConfirmAndPay />
-        </div>
-      ),
-    },
-    // หน้าlogin ของบิวงับ
-    {
-      path: "",
-      element: (
-        <div>
-          <Navbar />
+          <D2_login errors={validateError}
+                  handleChange={handleChange}
+                  handleSubmit={handleSubmit} />
+          <D3_createAccount errors={validateError}
+                  handleChange={handleChange}
+                  handleSubmit={handleSubmit} />
+          <ConfirmAndPay errors={validateError}
+                  handleChange={handleChange}
+                  handleSubmit={handleSubmit} />
         </div>
       ),
     },
@@ -226,7 +233,7 @@ function App() {
       element: (
         <div>
           <Navbar />
-          <div className="container mx-auto flex gap-10 py-10 px-5 sm:px-10 md:px-20 lg:px-40 relative">
+          <div className="mt-24 container mx-auto flex gap-10 py-10 px-5 sm:px-10 md:px-20 lg:px-40 relative">
             <div className="hidden lg:block max-w-xs sticky">
               <E2_categories />
             </div>
