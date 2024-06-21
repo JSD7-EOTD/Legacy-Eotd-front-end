@@ -13,7 +13,7 @@ const A5video = () => {
         <img
           src="../../public/images/A1/vdo.png"
           alt="Video thumbnail"
-          className="mx-auto"
+          className="mx-auto  lg:px-40 xl:px-40 2xl:px-40"
         />
       </div>
     </section>
