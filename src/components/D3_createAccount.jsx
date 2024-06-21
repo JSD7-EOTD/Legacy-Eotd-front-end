@@ -70,7 +70,7 @@ const D3_createAccount = ({ errors, handleChange, handleSubmit }) => {
         
 
         <div className="bg-[#BD8356] hover:bg-gradient-to-r from-[#794222] to-[#BD8356] hover:text-white transition-all duration-300 transform hover:translate-x-1 text-white rounded-full text-center p-2 w-full">
-          <button type="submit" >Sign Up</button>
+          <button type="submit" >Sign in</button>
         </div>
 </form>
         <div className="flex flex-col items-center gap-8 text-zinc-400 text-sm">
