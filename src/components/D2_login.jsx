@@ -1,7 +1,7 @@
 import React from "react";
 import D1_logoPic from "./D1_logoPic";
 
-const D2_login = () => {
+const D2_login = ({ errors, handleChange, handleSubmit }) => {
   return (
     <div className="md:flex h-[100vh]">
       <D1_logoPic />
@@ -10,33 +10,33 @@ const D2_login = () => {
           <h2 class="text-xl font-bold text-[#794222]">Welcome back!</h2>
           <p className="text-[#BD8356]">Meet the good taste today</p>
         </div>
-        <form className="flex flex-col gap-8">
+        <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
           <div>
-            <label>EMAIL OR PHONE NUMBER</label>
+            <label>EMAIL</label>
             <input
               type="text"
-              id="name"
-              name="name"
-              placeholder="Type your e-mail or phone number"
-              required
+              name="email"
+              onChange={handleChange}
+              placeholder="Type your e-mail"
               class="bg-slate-100 rounded p-2 w-full"
             />
+            {errors.email && <span className="text-red-500">{errors.email}</span>}
           </div>
           <div>
             <label>PASSWORD</label>
             <input
-              type="text"
-              id="password"
+              type="password"
               name="password"
+              onChange={handleChange}
               placeholder="Type your password"
-              required
               class="bg-slate-100 rounded p-2 w-full"
             />
-            <a href="" class="text-xs text-zinc-400">
+            {errors.password && <span className="text-red-500">{errors.password}</span>}
+          </div>
+          <a href="" class="text-xs text-zinc-400 flex justify-end">
               Forgot Password?
             </a>
-          </div>
-          <div class="bg-[#BD8356] text-white rounded-full text-center p-2 w-full">
+          <div class="bg-[#BD8356] hover:bg-gradient-to-r from-[#794222] to-[#BD8356] hover:text-white transition-all duration-300 transform hover:translate-x-1 text-white rounded-full text-center p-2 w-full">
             <button>Sign In</button>
           </div>
         </form>

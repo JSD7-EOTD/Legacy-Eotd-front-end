@@ -45,6 +45,7 @@ function App() {
   const [formData, setFormData] = useState({
     displayName: "", //
     fullName: "", //
+    password: "", //
     phone: "", //
     email: "", //
     address: "", //
@@ -112,7 +113,7 @@ function App() {
     if (!formData.email.trim()) {
       validationErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      validationErrors.email = "Email is not valid";
+      validationErrors.email = "Email is invalid";
     }
     if (!formData.address.trim()) {
       validationErrors.address = "Address is required";
@@ -127,13 +128,20 @@ function App() {
     }
     if (!formData.expirationDate.trim()) {
       validationErrors.expirationDate = "Expiration date is required";
-    } else if (formData.expirationDate.length !== 4) {
-      validationErrors.expirationDate = "Expiration date should be at 4";
+    } else if (formData.expirationDate.length !== 5) {
+      validationErrors.expirationDate = "Expiration date should be 4 characters";
     }
-    if (!formData.cvc.trim()) {
+  if (!formData.cvc.trim()) {
       validationErrors.cvc = "CVC is required";
     } else if (formData.cvc.length !== 3) {
       validationErrors.cvc = "CVC should be at 3";
+    }
+    if (!formData.password.trim()) {
+      validationErrors.password = "Password is required";
+    } else if (formData.password.length < 8 ) {
+      validationErrors.password = "Password should be at least 8 characters";
+    } else if (formData.password.length > 15 ) {
+      validationErrors.password = "Password should not over 15 characters";
     }
 
     setValidateError(validationErrors);
@@ -200,22 +208,20 @@ function App() {
         </div>
       ),
     },
+  // หน้าlogin ของบิวงับ
     {
       path: "/logIn",
       element: (
         <div>
-          <D2_login />
-          <D3_createAccount />
-          <ConfirmAndPay />
-        </div>
-      ),
-    },
-    // หน้าlogin ของบิวงับ
-    {
-      path: "",
-      element: (
-        <div>
-          <Navbar />
+          <D2_login errors={validateError}
+                  handleChange={handleChange}
+                  handleSubmit={handleSubmit} />
+          <D3_createAccount errors={validateError}
+                  handleChange={handleChange}
+                  handleSubmit={handleSubmit} />
+          <ConfirmAndPay errors={validateError}
+                  handleChange={handleChange}
+                  handleSubmit={handleSubmit} />
         </div>
       ),
     },
