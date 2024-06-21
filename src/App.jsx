@@ -26,15 +26,15 @@ import E8_trackingOrders from "../src/components/E8_trackingOrders.jsx";
 
 
 //ของแฟร์งงับ
-import Test from "./components/Test.jsx";
+
 import A2hero2 from "./components/A2hero2.jsx";
 import A1hero from "./components/A1hero .jsx";
 import A4comment from "./components/A4comment.jsx";
 import A5video from "./components/A5video.jsx";
-import D2_login from "./components/D2_login.jsx"
-import D3_createAccount from "./components/D3_createAccount.jsx"
-import ConfirmAndPay from "./components/ConfirmAndPay"
-
+import D2_login from "./components/D2_login.jsx";
+import D3_createAccount from "./components/D3_createAccount.jsx";
+import ConfirmAndPay from "./components/ConfirmAndPay";
+import A3category from "./components/A3category.jsx";
 
 function App() {
   const [productList, setProductList] = useState([]);
@@ -149,8 +149,9 @@ function App() {
       element: (
         <div>
           <Navbar />
-          <A1hero />
-          <A2hero2 />
+          <A1hero/>
+          <A2hero2/>
+          <A3category/>
           <A4comment />
           <A5video />
           <Footer />
