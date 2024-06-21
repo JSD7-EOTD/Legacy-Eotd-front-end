@@ -2,7 +2,7 @@ import React from "react";
 import D1_logoPic from "./D1_logoPic";
 import "boxicons";
 
-const D3_createAccount = () => {
+const D3_createAccount = ({ errors, handleChange, handleSubmit }) => {
   return (
     <div className="md:flex">
       <D1_logoPic />
@@ -13,39 +13,41 @@ const D3_createAccount = () => {
           </h2>
           <p className="text-[#BD8356]">It's free and easy</p>
         </div>
-        <form className="flex flex-col gap-8">
+        <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
           <div>
             <label>FULL NAME</label>
             <input
               type="text"
-              id="name"
-              name="name"
+              name="fullName"
+              onChange={handleChange}
               placeholder="Enter your name"
               className="bg-slate-100 rounded p-2 w-full"
             />
+            {errors.fullName && (
+              <span className="text-red-500">{errors.fullName}</span>
+            )}
           </div>
           <div>
-            <label>EMAIL OR PHONE NUMBER</label>
+            <label>EMAIL</label>
             <input
               type="text"
-              id="e-mail"
-              name="e-mail"
-              placeholder="Type your e-mail or phone number"
-              className="bg-slate-100 rounded p-2 w-full"
+              name="email"
+              onChange={handleChange}
+              placeholder="Type your e-mail"
+              class="bg-slate-100 rounded p-2 w-full"
             />
+            {errors.email && <span className="text-red-500">{errors.email}</span>}
           </div>
           <div>
             <label>PASSWORD</label>
             <input
-              type="text"
+              type="password"
               id="password"
               name="password"
               placeholder="Type your password"
               className="bg-slate-100 rounded p-2 w-full"
             />
-            <p className="text-xs text-zinc-400">
-              Must be 8 characters at least
-            </p>
+            {errors.password && <span className="text-red-500">{errors.password}</span>}
           </div>
           <div className="text-zinc-400 -white">
             <input type="checkbox" className="" />
@@ -65,11 +67,12 @@ const D3_createAccount = () => {
               Privacy Policy.
             </a>
           </div>
-        </form>
+        
 
-        <div className="bg-[#BD8356] text-white rounded-full text-center p-2 w-full">
-          <button>Sign Up</button>
+        <div className="bg-[#BD8356] hover:bg-gradient-to-r from-[#794222] to-[#BD8356] hover:text-white transition-all duration-300 transform hover:translate-x-1 text-white rounded-full text-center p-2 w-full">
+          <button type="submit" >Sign in</button>
         </div>
+</form>
         <div className="flex flex-col items-center gap-8 text-zinc-400 text-sm">
           <div>
             <p>or do it via other accounts</p>
