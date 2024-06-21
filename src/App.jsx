@@ -104,7 +104,7 @@ function App() {
     }
     if (!formData.phone.trim()) {
       validationErrors.phone = "Your phone number is required";
-    } else if (formData.phone.length === 10) {
+    } else if (formData.phone.length !== 10) {
       validationErrors.phone = "Your phone number should be at 10";
     }
     if (!formData.email.trim()) {
